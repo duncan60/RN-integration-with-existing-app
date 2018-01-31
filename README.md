@@ -85,7 +85,7 @@ public class AnExampleReactPackage implements ReactPackage {
         }
 ```
 
-* 透過 React-Native NativeModules & NativeEventEmitter 和 Native 做溝通：
+* 透過 React-Native NativeModules & NativeEventEmitter 和 Native 做溝通：
 
 ```
 import {
