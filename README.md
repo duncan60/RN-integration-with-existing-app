@@ -28,7 +28,7 @@ yarn run start
 * 建立繼承 ReactContextBaseJavaModule 的 class，並加入方法:
 
 ```
-# /android/app/src/main/java/com/example/duncan_du/android/
+# /android/app/src/main/java/com/example/duncan_du/android/ReactEventManager.java
 public class ReactEventManager extends ReactContextBaseJavaModule {
 
     public ReactEventManager(ReactApplicationContext reactContext) {
@@ -54,6 +54,7 @@ public class ReactEventManager extends ReactContextBaseJavaModule {
 * 建立繼承 ReactPackage 的 class，並將剛建立的 ReactEventManager 加入:
 
 ```
+# /android/app/src/main/java/com/example/duncan_du/android/AnExampleReactPackage.java
 public class AnExampleReactPackage implements ReactPackage {
 
     @Override
@@ -76,6 +77,7 @@ public class AnExampleReactPackage implements ReactPackage {
 * MainApplication 中加入 ReactPackage 的引用：
 
 ```
+# /android/app/src/main/java/com/example/duncan_du/android/MainApplication.java
 @Override
         protected List<ReactPackage> getPackages() {
             return Arrays.<ReactPackage>asList(
@@ -88,6 +90,8 @@ public class AnExampleReactPackage implements ReactPackage {
 * 透過 React-Native NativeModules & NativeEventEmitter 和 Native 做溝通：
 
 ```
+# rn/App.js
+
 import {
   NativeModules,
   NativeEventEmitter,
