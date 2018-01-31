@@ -108,9 +108,9 @@ componentDidMount() {
       this.setState({ nativeEventInfo: info });
     });
   }
-  componentWillUnmount() {
-    this._subscription.remove();
-  }
+componentWillUnmount() {
+  this._subscription.remove();
+}
 ```
 
 ## Others
