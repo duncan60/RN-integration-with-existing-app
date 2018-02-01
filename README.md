@@ -119,7 +119,7 @@ componentWillUnmount() {
 
 * [React Native Tutorial: Integrating in an Existing App](https://www.raywenderlich.com/136047/react-native-existing-app)可以學習到
 
-### 加入到 View
+### 加入到 ViewController
 
 ```
 # /ios/ios/ViewController.m
