@@ -33,6 +33,6 @@ public class ReactEventManager extends ReactContextBaseJavaModule {
         Toast.makeText(getReactApplicationContext(), message, Toast.LENGTH_LONG).show();
         this.getReactApplicationContext()
                 .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
-                .emit("eventToRN","connecting RN.....");
+                .emit("eventToRN","test RN integration with existing app");
     }
 }

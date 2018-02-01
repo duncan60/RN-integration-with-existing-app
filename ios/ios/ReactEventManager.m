@@ -22,7 +22,16 @@ RCT_EXPORT_METHOD(show:(NSString *)message)
 {
     RCTLogInfo(@"from RN Message %@", message);
     
-    [self sendEventWithName:@"eventToRN" body:@"connecting RN....."];
+    [self sendEventWithName:@"eventToRN" body:@"test RN integration with existing app"];
+    
+    UIViewController *presentingController = RCTPresentedViewController();
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+   
+    [alertController addAction:ok];
+    
+    [presentingController presentViewController:alertController animated:YES completion: nil];
 }
 
 

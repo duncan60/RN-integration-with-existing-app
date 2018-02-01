@@ -9,9 +9,10 @@ import {
   StyleSheet,
   Text,
   View,
-  Button,
+  TouchableOpacity,
   NativeModules,
   NativeEventEmitter,
+  Alert,
 } from 'react-native';
 
 const { ReactEventManager } = NativeModules;
@@ -45,14 +46,20 @@ export default class App extends Component {
         <Text style={styles.welcome}>{`Native Event Info: ${
           this.state.nativeEventInfo
         }`}</Text>
-        <Button
+        <TouchableOpacity
           onPress={() => {
             ReactEventManager.show('From React Native: Awesome!');
           }}
-          title="Call Native Method"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-        />
+        >
+          <Text style={styles.buttom}>Call Native Method</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            Alert.alert('RN Modules', 'RCTAlertManager Alert!!');
+          }}
+        >
+          <Text style={styles.buttom}>Alert Message</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -69,10 +76,17 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
+    color: '#24292e',
   },
   instructions: {
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  buttom: {
+    marginTop: 10,
+    backgroundColor: '#e83e8c',
+    color: '#ffffff',
+    padding: 10,
   },
 });
