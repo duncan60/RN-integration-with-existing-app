@@ -1,0 +1,29 @@
+//
+//  ReactEventManager.m
+//  ios
+//
+//  Created by Duncan Du [MIGOTP] on 2018/2/1.
+//  Copyright © 2018年 Duncan. All rights reserved.
+//
+
+#import "ReactEventManager.h"
+#import <React/RCTLog.h>
+
+@implementation ReactEventManager
+
+RCT_EXPORT_MODULE();
+
+- (NSArray<NSString *> *)supportedEvents
+{
+    return @[@"eventToRN"];
+}
+
+RCT_EXPORT_METHOD(show:(NSString *)message)
+{
+    RCTLogInfo(@"from RN Message %@", message);
+    
+    [self sendEventWithName:@"eventToRN" body:@"connecting RN....."];
+}
+
+
+@end

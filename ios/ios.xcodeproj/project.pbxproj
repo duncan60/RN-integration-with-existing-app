@@ -18,6 +18,7 @@
 		651EFC9C2021B50400BD7E3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 651EFC9B2021B50400BD7E3A /* main.m */; };
 		651EFCA62021B50400BD7E3A /* iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 651EFCA52021B50400BD7E3A /* iosTests.m */; };
 		651EFCB12021B50400BD7E3A /* iosUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 651EFCB02021B50400BD7E3A /* iosUITests.m */; };
+		651EFCCC2022B22900BD7E3A /* ReactEventManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 651EFCCB2022B22900BD7E3A /* ReactEventManager.m */; };
 		789B90135ED5CF768603A13A /* libPods-iosUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3FE2D0BD45A4690994445B /* libPods-iosUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,8 @@
 		651EFCAC2021B50400BD7E3A /* iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		651EFCB02021B50400BD7E3A /* iosUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iosUITests.m; sourceTree = "<group>"; };
 		651EFCB22021B50400BD7E3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		651EFCCA2022B22900BD7E3A /* ReactEventManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactEventManager.h; sourceTree = "<group>"; };
+		651EFCCB2022B22900BD7E3A /* ReactEventManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactEventManager.m; sourceTree = "<group>"; };
 		6687411C820080FF92213BB5 /* Pods-iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iosTests/Pods-iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		66A9643D10A0F482EE7D73F8 /* Pods-iosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iosUITests/Pods-iosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		863875300B93A034562747C2 /* libPods-iosTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iosTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +133,8 @@
 				651EFC9A2021B50400BD7E3A /* Info.plist */,
 				651EFC9B2021B50400BD7E3A /* main.m */,
 				651EFC922021B50300BD7E3A /* ios.xcdatamodeld */,
+				651EFCCA2022B22900BD7E3A /* ReactEventManager.h */,
+				651EFCCB2022B22900BD7E3A /* ReactEventManager.m */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -467,6 +472,7 @@
 				651EFC942021B50400BD7E3A /* ios.xcdatamodeld in Sources */,
 				651EFC8E2021B50300BD7E3A /* ViewController.m in Sources */,
 				651EFC9C2021B50400BD7E3A /* main.m in Sources */,
+				651EFCCC2022B22900BD7E3A /* ReactEventManager.m in Sources */,
 				651EFC8B2021B50300BD7E3A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -49,7 +49,7 @@ export default class App extends Component {
           onPress={() => {
             ReactEventManager.show('From React Native: Awesome!');
           }}
-          title="call Native Method"
+          title="Call Native Method"
           color="#841584"
           accessibilityLabel="Learn more about this purple button"
         />

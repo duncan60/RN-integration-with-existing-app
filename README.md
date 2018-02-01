@@ -113,8 +113,20 @@ componentWillUnmount() {
 }
 ```
 
-## Others
+## 學習資源
+
+### Android
 
 * [20 分钟理解 React Native For Android 原理](https://juejin.im/entry/58d4770544d9040069295eaa)
 
 * [ReactNativeAndroid 源码分析-Js 如何调用 Native 的代码](https://zhuanlan.zhihu.com/p/20464825)
+
+### iOS
+
+* [Integrating React Native into an Existing App (iOS)](https://codeburst.io/integrate-react-native-into-an-existing-app-ios-87c947a16044)
+
+* [ReactNative iOS 源码解析](http://awhisper.github.io/2016/06/24/ReactNative%E6%B5%81%E7%A8%8B%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/)
+
+### 其他
+
+* [React Native 学习记录 － JS 和 OC 通信流程](http://tutudev.com/2016/04/26/React-Native-Study/)
