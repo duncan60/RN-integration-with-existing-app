@@ -166,7 +166,7 @@ RCT_EXPORT_METHOD(show:(NSString *)message)
 
 ## RN Component
 
-* 透過 React-Native NativeModules & NativeEventEmitter 和 Native 做溝通：
+* 使用 React-Native 的 NativeModules & NativeEventEmitter 和 Native 做溝通：
 
 ```
 # rn/App.js
