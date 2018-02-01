@@ -1,6 +1,6 @@
 # RN-integration-with-existing-app
 
-嘗試將 React Native 與現有 Native Android/iOS APP 做配合溝通的簡單範例。
+嘗試將 React Native 與現有 Java/Objective-C Native APP 做配合溝通的簡單範例。
 
 ## Build Setup
 
@@ -113,6 +113,83 @@ componentWillUnmount() {
 }
 ```
 
+## iOS 要點
+
+### 如何引入 RN Modules
+
+* [React Native Tutorial: Integrating in an Existing App](https://www.raywenderlich.com/136047/react-native-existing-app)可以學習到
+
+### 加入到 View
+
+```
+# /ios/ios/ViewController.m
+
+- (IBAction)addRNViewPressed:(id)sender {
+    NSURL *jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.bundle?platform=ios"];
+
+    RCTRootView *rootView =
+    [[RCTRootView alloc] initWithBundleURL: jsCodeLocation
+                                moduleName: @"RNExistingApp"
+                            initialProperties:
+        @{
+        @"message" : @"Hello, I'm come from iOS"
+        }
+                                launchOptions: nil];
+    UIViewController *vc = [[UIViewController alloc] init];
+    vc.view = rootView;
+    [self presentViewController:vc animated:YES completion:nil];
+}
+```
+
+### iOS & RN 溝通與事件增聽
+
+* 建立 .h & .m 檔案，加入發法與曾聽事件， RN Complete 與 Android 一樣，無需改動
+
+```
+# /ios/ios/ReactEventManager.h
+
+#import <React/RCTBridgeModule.h>
+#import <React/RCTEventEmitter.h>
+
+@interface ReactEventManager : RCTEventEmitter <RCTBridgeModule>
+
+@end
+
+
+# /ios/ios/ReactEventManager.m
+
+#import "ReactEventManager.h"
+#import <React/RCTLog.h>
+
+@implementation ReactEventManager
+
+RCT_EXPORT_MODULE();
+
+- (NSArray<NSString *> *)supportedEvents
+{
+    return @[@"eventToRN"];
+}
+
+RCT_EXPORT_METHOD(show:(NSString *)message)
+{
+    RCTLogInfo(@"from RN Message %@", message);
+
+    [self sendEventWithName:@"eventToRN" body:@"test RN integration with existing app"];
+
+    UIViewController *presentingController = RCTPresentedViewController();
+
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+
+    [alertController addAction:ok];
+
+    [presentingController presentViewController:alertController animated:YES completion: nil];
+}
+
+
+@end
+```
+
 ## 學習資源
 
 ### Android
@@ -129,4 +206,5 @@ componentWillUnmount() {
 
 ### 其他
 
+* [[深入 REACTNATIVE]第一篇 通訊及消息迴圈代碼剖析](https://ddnews.me/tech/wdj0oxjh.html)
 * [React Native 学习记录 － JS 和 OC 通信流程](http://tutudev.com/2016/04/26/React-Native-Study/)
