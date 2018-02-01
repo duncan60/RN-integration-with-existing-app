@@ -87,32 +87,6 @@ public class AnExampleReactPackage implements ReactPackage {
         }
 ```
 
-* 透過 React-Native NativeModules & NativeEventEmitter 和 Native 做溝通：
-
-```
-# rn/App.js
-
-import {
-  NativeModules,
-  NativeEventEmitter,
-} from 'react-native';
-const { ReactEventManager } = NativeModules;
-
-# onPress Method
-ReactEventManager.show('From React Native: Awesome!');
-
-# Event AddListener
-componentDidMount() {
-    const ManagerEvent = new NativeEventEmitter(ReactEventManager);
-    this._subscription = ManagerEvent.addListener('eventToRN', (info) => {
-      this.setState({ nativeEventInfo: info });
-    });
-  }
-componentWillUnmount() {
-  this._subscription.remove();
-}
-```
-
 ## iOS 要點
 
 ### 如何引入 RN Modules
@@ -143,7 +117,7 @@ componentWillUnmount() {
 
 ### iOS & RN 溝通與事件增聽
 
-* 建立 .h & .m 檔案，加入發法與曾聽事件， RN Complete 與 Android 一樣，無需改動
+* 建立 .h & .m 檔案，加入發法與曾聽事件
 
 ```
 # /ios/ios/ReactEventManager.h
@@ -188,6 +162,34 @@ RCT_EXPORT_METHOD(show:(NSString *)message)
 
 
 @end
+```
+
+## RN Component
+
+* 透過 React-Native NativeModules & NativeEventEmitter 和 Native 做溝通：
+
+```
+# rn/App.js
+
+import {
+  NativeModules,
+  NativeEventEmitter,
+} from 'react-native';
+const { ReactEventManager } = NativeModules;
+
+# onPress Method
+ReactEventManager.show('From React Native: Awesome!');
+
+# Event AddListener
+componentDidMount() {
+    const ManagerEvent = new NativeEventEmitter(ReactEventManager);
+    this._subscription = ManagerEvent.addListener('eventToRN', (info) => {
+      this.setState({ nativeEventInfo: info });
+    });
+  }
+componentWillUnmount() {
+  this._subscription.remove();
+}
 ```
 
 ## 學習資源
