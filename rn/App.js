@@ -26,15 +26,23 @@ export default class App extends Component {
     };
   }
   componentDidMount() {
-    console.log('componentDidMount');
-    const ManagerEvent = new NativeEventEmitter(ReactEventManager);
-    this._subscription = ManagerEvent.addListener('eventToRN', (info) => {
-      this.setState({ nativeEventInfo: info });
-    });
+    try {
+      console.log('componentDidMount');
+      const ManagerEvent = new NativeEventEmitter(ReactEventManager);
+      this._subscription = ManagerEvent.addListener('eventToRN', (info) => {
+        this.setState({ nativeEventInfo: info });
+      });
+    } catch (err) {
+      console.log(err);
+    }
   }
   componentWillUnmount() {
-    console.log('componentWillUnmount');
-    this._subscription.remove();
+    try {
+      console.log('componentWillUnmount');
+      this._subscription.remove();
+    } catch (err) {
+      console.log(err);
+    }
   }
   render() {
     console.log(this.props);
@@ -48,7 +56,11 @@ export default class App extends Component {
         }`}</Text>
         <TouchableOpacity
           onPress={() => {
-            ReactEventManager.show('From React Native: Awesome!');
+            try {
+              ReactEventManager.show('From React Native: Awesome!');
+            } catch (err) {
+              console.log(err);
+            }
           }}
         >
           <Text style={styles.buttom}>Call Native Method</Text>
@@ -64,6 +76,10 @@ export default class App extends Component {
     );
   }
 }
+
+App.defaultProps = {
+  message: "Hello, I'm come from RN",
+};
 
 const styles = StyleSheet.create({
   container: {
