@@ -12,7 +12,9 @@ yarn
 yarn run start
 
 
-# open Android Studio, Run Android project
+# Android Studio open Android project and run Simulators
+
+# ios install pods, Xcode open project and run Simulators
 ```
 
 ## Android 要點：
