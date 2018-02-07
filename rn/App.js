@@ -67,7 +67,7 @@ export default class App extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            Alert.alert('RN Modules', 'RCTAlertManager Alert!!');
+            Alert.alert('RN API Modules', 'RCTAlertManager Alert!!');
           }}
         >
           <Text style={styles.buttom}>Alert Message</Text>

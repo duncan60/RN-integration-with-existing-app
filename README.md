@@ -198,6 +198,8 @@ componentWillUnmount() {
 
 ### Android
 
+* [React Native for Android 原理分析与实践：实现原理](https://juejin.im/post/5a6460f8f265da3e4f0a446d)
+
 * [20 分钟理解 React Native For Android 原理](https://juejin.im/entry/58d4770544d9040069295eaa)
 
 * [ReactNativeAndroid 源码分析-Js 如何调用 Native 的代码](https://zhuanlan.zhihu.com/p/20464825)
@@ -212,3 +214,4 @@ componentWillUnmount() {
 
 * [[深入 REACTNATIVE]第一篇 通訊及消息迴圈代碼剖析](https://ddnews.me/tech/wdj0oxjh.html)
 * [React Native 学习记录 － JS 和 OC 通信流程](http://tutudev.com/2016/04/26/React-Native-Study/)
+* [携程 React Native 实践与性能优化](http://geek.csdn.net/news/detail/114216)
