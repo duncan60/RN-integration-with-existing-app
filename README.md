@@ -221,3 +221,7 @@ componentWillUnmount() {
 * [React Native 学习记录 － JS 和 OC 通信流程](http://tutudev.com/2016/04/26/React-Native-Study/)
 
 * [携程 React Native 实践与性能优化](http://geek.csdn.net/news/detail/114216)
+
+* [AC2016 腾讯前端技术大会 2 2 1 打造急速 ReactNative 应用](https://www.youtube.com/watch?v=NdUg_hjI30w)
+
+* [React-Native 通用化建设与性能优化](https://ivweb.io/topic/5906feb806f26845b620dd82)

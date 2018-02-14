@@ -3,7 +3,9 @@
     "version": "0.0.1",
     "private": true,
     "scripts": {
-        "start": "node node_modules/react-native/local-cli/cli.js start --reset-cache",
+        "start": "node node_modules/react-native/local-cli/cli.js start --config ../../../../packager/config.js --reset-cache",
+        "start:unbundle": "export BUNDLE_COMMAND=unbundle && export BUNDLE_CONFIG=packager/config.js && yarn run start",
+        "start:bundle": "export BUNDLE_COMMAND=bundle && export BUNDLE_CONFIG='' && yarn run start",
         "test": "jest"
     },
     "dependencies": {

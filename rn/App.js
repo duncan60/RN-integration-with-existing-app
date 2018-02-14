@@ -45,15 +45,10 @@ export default class App extends Component {
     }
   }
   render() {
-    console.log(this.props);
+    const MessageText = require('./MessageText').default;
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>{`From Native: ${
-          this.props.message
-        }`}</Text>
-        <Text style={styles.welcome}>{`Native Event Info: ${
-          this.state.nativeEventInfo
-        }`}</Text>
+        <MessageText {...this.props} {...this.state} />
         <TouchableOpacity
           onPress={() => {
             try {
@@ -72,6 +67,17 @@ export default class App extends Component {
         >
           <Text style={styles.buttom}>Alert Message</Text>
         </TouchableOpacity>
+        {/* <TouchableOpacity
+          onPress={() => {
+            try {
+              ReactEventManager.dismissView();
+            } catch (err) {
+              console.log(err);
+            }
+          }}
+        >
+          <Text style={styles.buttom}>back</Text>
+        </TouchableOpacity> */}
       </View>
     );
   }

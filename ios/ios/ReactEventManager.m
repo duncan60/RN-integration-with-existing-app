@@ -28,10 +28,17 @@ RCT_EXPORT_METHOD(show:(NSString *)message)
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-   
+
     [alertController addAction:ok];
-    
+
     [presentingController presentViewController:alertController animated:YES completion: nil];
+   // [presentingController dismissViewControllerAnimated:YES completion:nil];
+}
+
+RCT_EXPORT_METHOD(dismissView)
+{
+    UIViewController *presentingController = RCTPresentedViewController();
+    [presentingController dismissViewControllerAnimated:YES completion:nil];
 }
 
 

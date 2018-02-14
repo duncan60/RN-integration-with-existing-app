@@ -56,6 +56,7 @@
     vc.view = rootView;
     [self presentViewController:vc animated:YES completion:nil];
 //    [self showAlert];
+    
 }
 
 @end
