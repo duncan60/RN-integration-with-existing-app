@@ -225,3 +225,5 @@ componentWillUnmount() {
 * [AC2016 腾讯前端技术大会 2 2 1 打造急速 ReactNative 应用](https://www.youtube.com/watch?v=NdUg_hjI30w)
 
 * [React-Native 通用化建设与性能优化](https://ivweb.io/topic/5906feb806f26845b620dd82)
+
+* [React Native 性能优化](https://www.j4ml.com/t/20344)
