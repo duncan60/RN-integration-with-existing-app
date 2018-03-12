@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default class MessageText extends Component {
   // lots and lots of code
@@ -7,8 +7,17 @@ export default class MessageText extends Component {
     return (
       <View>
         <Text>{`From Native: ${this.props.message}`}</Text>
-        <Text>{`Native Event Info: ${this.props.nativeEventInfo}`}</Text>
+        <Text style={styles.info}>{`Native Event Info: ${
+          this.props.nativeEventInfo
+        }`}</Text>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  info: {
+    fontSize: 20,
+    color: '#C15E21',
+  },
+});
