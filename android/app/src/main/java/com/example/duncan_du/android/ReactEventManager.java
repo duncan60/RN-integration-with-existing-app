@@ -29,7 +29,7 @@ public class ReactEventManager extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void show(String message) {
+    public void showNativeAlert(String message) {
         Toast.makeText(getReactApplicationContext(), message, Toast.LENGTH_LONG).show();
         this.getReactApplicationContext()
                 .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)

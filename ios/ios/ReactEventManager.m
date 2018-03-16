@@ -18,7 +18,7 @@ RCT_EXPORT_MODULE();
     return @[@"eventToRN"];
 }
 
-RCT_EXPORT_METHOD(show:(NSString *)message)
+RCT_EXPORT_METHOD(showNativeAlert:(NSString *)message)
 {
     RCTLogInfo(@"from RN Message %@", message);
     

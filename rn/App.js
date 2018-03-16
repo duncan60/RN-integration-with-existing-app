@@ -52,7 +52,7 @@ export default class App extends Component {
         <TouchableOpacity
           onPress={() => {
             try {
-              ReactEventManager.show('From React Native: Awesome!');
+              ReactEventManager.showNativeAlert('From React Native: Awesome!');
             } catch (err) {
               console.log(err);
             }
@@ -67,17 +67,6 @@ export default class App extends Component {
         >
           <Text style={styles.buttom}>Alert Message</Text>
         </TouchableOpacity>
-        {/* <TouchableOpacity
-          onPress={() => {
-            try {
-              ReactEventManager.dismissView();
-            } catch (err) {
-              console.log(err);
-            }
-          }}
-        >
-          <Text style={styles.buttom}>back</Text>
-        </TouchableOpacity> */}
       </View>
     );
   }
