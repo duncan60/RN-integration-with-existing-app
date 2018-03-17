@@ -43,7 +43,7 @@ public class ReactEventManager extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void show(String message) {
+    public void showNativeAlert(String message) {
         Toast.makeText(getReactApplicationContext(), message, Toast.LENGTH_LONG).show();
         // send event to RN
         this.getReactApplicationContext()
@@ -146,7 +146,7 @@ RCT_EXPORT_MODULE();
     return @[@"eventToRN"];
 }
 
-RCT_EXPORT_METHOD(show:(NSString *)message)
+RCT_EXPORT_METHOD(showNativeAlert:(NSString *)message)
 {
     RCTLogInfo(@"from RN Message %@", message);
 
