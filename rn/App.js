@@ -9,6 +9,7 @@ import {
   StyleSheet,
   Text,
   View,
+  Image,
   TouchableOpacity,
   NativeModules,
   NativeEventEmitter,
@@ -48,6 +49,12 @@ export default class App extends Component {
     const MessageText = require('./MessageText').default;
     return (
       <View style={styles.container}>
+        <Image
+          style={{ width: '50%', height: 100 }}
+          source={{
+            uri: 'https://i.imgur.com/IYhTVXU.png',
+          }}
+        />
         <MessageText {...this.props} {...this.state} />
         <TouchableOpacity
           onPress={() => {
