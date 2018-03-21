@@ -13,6 +13,7 @@
 
 RCT_EXPORT_MODULE();
 
+// 定義Events
 - (NSArray<NSString *> *)supportedEvents
 {
     return @[@"eventToRN"];
@@ -21,9 +22,10 @@ RCT_EXPORT_MODULE();
 RCT_EXPORT_METHOD(showNativeAlert:(NSString *)message)
 {
     RCTLogInfo(@"from RN Message %@", message);
-    
+    // sendEvent
     [self sendEventWithName:@"eventToRN" body:@"test RN integration with existing app"];
     
+    // alert
     UIViewController *presentingController = RCTPresentedViewController();
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:message preferredStyle:UIAlertControllerStyleAlert];
@@ -34,12 +36,5 @@ RCT_EXPORT_METHOD(showNativeAlert:(NSString *)message)
     [presentingController presentViewController:alertController animated:YES completion: nil];
    // [presentingController dismissViewControllerAnimated:YES completion:nil];
 }
-
-RCT_EXPORT_METHOD(dismissView)
-{
-    UIViewController *presentingController = RCTPresentedViewController();
-    [presentingController dismissViewControllerAnimated:YES completion:nil];
-}
-
 
 @end

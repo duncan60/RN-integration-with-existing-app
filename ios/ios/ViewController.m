@@ -21,29 +21,18 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     NSLog(@"didReceiveMemoryWarning");
     // Dispose of any resources that can be recreated.
 }
 
-//- (void)showAlert {
-//    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"標題" message:@"這個是UIAlertController的默認樣式" preferredStyle:UIAlertControllerStyleAlert];
-//    UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action)
-//                         {
-//                             //BUTTON OK CLICK EVENT
-//                         }];
-//    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
-//    [alertController addAction:cancel];
-//    [alertController addAction:ok];
-//    [self presentViewController:alertController animated:YES completion:nil];
-//}
-
 - (IBAction)addRNViewPressed:(id)sender {
     NSLog(@"add RN View Button Pressed");
+    
+    // 加入 RN View， RNExistingApp RN 註冊的名稱
     NSURL *jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.bundle?platform=ios"];
-
+    
     RCTRootView *rootView =
     [[RCTRootView alloc] initWithBundleURL: jsCodeLocation
                                 moduleName: @"RNExistingApp"

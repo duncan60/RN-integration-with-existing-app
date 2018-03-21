@@ -19,6 +19,7 @@ console.log(
 );
 
 // grab this text blob, and put it in a file named packager/moduleNames.js
-console.log(`module.exports = ${JSON.stringify(loadedModuleNames.sort())};`);
+// console.log(`module.exports = ${JSON.stringify(loadedModuleNames.sort())};`);
 
+// 項 RN 註冊 RNExistingApp  view component
 AppRegistry.registerComponent('RNExistingApp', () => App);

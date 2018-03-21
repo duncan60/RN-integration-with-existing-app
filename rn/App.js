@@ -16,6 +16,7 @@ import {
   Alert,
 } from 'react-native';
 
+// ReactEventManager 是 Native 定義的名稱
 const { ReactEventManager } = NativeModules;
 
 export default class App extends Component {
@@ -28,7 +29,7 @@ export default class App extends Component {
   }
   componentDidMount() {
     try {
-      console.log('componentDidMount');
+      // 事件增聽 ， eventToRN 是 Native 定義的名稱
       const ManagerEvent = new NativeEventEmitter(ReactEventManager);
       this._subscription = ManagerEvent.addListener('eventToRN', (info) => {
         this.setState({ nativeEventInfo: info });
@@ -39,7 +40,6 @@ export default class App extends Component {
   }
   componentWillUnmount() {
     try {
-      console.log('componentWillUnmount');
       this._subscription.remove();
     } catch (err) {
       console.log(err);
@@ -50,7 +50,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Image
-          style={{ width: '50%', height: 100 }}
+          style={{ width: '50%', height: 110 }}
           source={{
             uri: 'https://i.imgur.com/IYhTVXU.png',
           }}
@@ -59,6 +59,7 @@ export default class App extends Component {
         <TouchableOpacity
           onPress={() => {
             try {
+              // 呼叫 Native 中的 showNativeAlert 方法
               ReactEventManager.showNativeAlert('From React Native: Awesome!');
             } catch (err) {
               console.log(err);
@@ -69,16 +70,18 @@ export default class App extends Component {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
+            // API Modules 呼叫
             Alert.alert('RN API Modules', 'RCTAlertManager Alert!!');
           }}
         >
-          <Text style={styles.buttom}>Alert Message</Text>
+          <Text style={styles.buttomBlue}>Alert Message</Text>
         </TouchableOpacity>
       </View>
     );
   }
 }
 
+// 預設 message
 App.defaultProps = {
   message: "Hello, I'm come from RN",
 };
@@ -104,6 +107,12 @@ const styles = StyleSheet.create({
   buttom: {
     marginTop: 10,
     backgroundColor: '#e83e8c',
+    color: '#ffffff',
+    padding: 10,
+  },
+  buttomBlue: {
+    marginTop: 10,
+    backgroundColor: '#0747a6',
     color: '#ffffff',
     padding: 10,
   },
